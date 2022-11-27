@@ -8,23 +8,41 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    var dataList : Note!
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var descriptionLabel: UITextField!
+    @IBOutlet weak var hasDueDate: UISwitch!
+    @IBOutlet weak var isCompleted: UISwitch!
+    @IBOutlet weak var dueTime: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("xxxadasdadadasdadasdad")
-        print("xxxadasdadadasdadasdad")
+        titleLabel.text = dataList.name ?? ""
+        descriptionLabel.text = dataList.notes
+        hasDueDate.isOn = dataList.hasDueDate
+        isCompleted.isOn = dataList.isCompleted
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onUpdate(_ sender: UIButton) {
+        dataList.name = titleLabel.text
+        dataList.notes = descriptionLabel.text
+        dataList.hasDueDate = hasDueDate.isOn
+        dataList.isCompleted = isCompleted.isOn
+        
+        do{
+            try self.context.save()
+            
+        }catch{}
     }
-    */
-
+    
+    @IBAction func onDelete(_ sender: UIButton) {
+        self.context.delete(dataList)
+        do{
+            try self.context.save()
+            
+        }catch{}
+    }
 }
