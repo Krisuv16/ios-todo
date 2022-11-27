@@ -23,18 +23,35 @@ class DetailViewController: UIViewController {
         descriptionLabel.text = dataList.notes
         hasDueDate.isOn = dataList.hasDueDate
         isCompleted.isOn = dataList.isCompleted
+        dueTime.date = dataList.date ?? Date.now
+        
         // Do any additional setup after loading the view.
     }
     
     @IBAction func onUpdate(_ sender: UIButton) {
+        
+        let formatter3 = DateFormatter()
+        formatter3.dateFormat = "MMM d yyyy, h:mm a "
+        
         dataList.name = titleLabel.text
         dataList.notes = descriptionLabel.text
         dataList.hasDueDate = hasDueDate.isOn
         dataList.isCompleted = isCompleted.isOn
+//        dataList.date = dueTime.date
+        
+        if(!hasDueDate.isOn){
+            dataList.dueDate = nil
+            dataList.date = nil
+        }else{
+            dataList.dueDate = formatter3.string(from: dueTime.date)
+            dataList.date = dueTime.date
+        }
         
         do{
             try self.context.save()
-            
+
+            _ = navigationController?.popToRootViewController(animated: true)
+        
         }catch{}
     }
     
@@ -42,6 +59,7 @@ class DetailViewController: UIViewController {
         self.context.delete(dataList)
         do{
             try self.context.save()
+            _ = navigationController?.popToRootViewController(animated: true)
             
         }catch{}
     }

@@ -55,18 +55,19 @@ class AddDataViewController: UIViewController {
         
         let formatter3 = DateFormatter()
         formatter3.dateFormat = "MMM d yyyy, h:mm a "
-        print(formatter3.string(from: datePicker.date))
-        
-        
-        
+            
         let newNotes = Note(context: self.context)
         newNotes.id = Int32(truncating: 0 as NSNumber)
         newNotes.name = titleTextField.text
         newNotes.notes = descriptionTextField.text
-        newNotes.dueDate = formatter3.string(from: datePicker.date)
         newNotes.isCompleted = completedSwitch.isOn
         newNotes.hasDueDate = uiSwitch.isOn
-
+        
+        if(uiSwitch.isOn){
+            newNotes.dueDate = formatter3.string(from: datePicker.date)
+            newNotes.date = datePicker.date
+        }
+        
         do
         {
             try self.context.save()
@@ -75,7 +76,8 @@ class AddDataViewController: UIViewController {
         catch {
             print("Error")
         }
-        
+        _ = navigationController?.popToRootViewController(animated: true)
+
         
     }
     

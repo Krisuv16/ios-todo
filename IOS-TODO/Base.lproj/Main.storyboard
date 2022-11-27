@@ -121,34 +121,34 @@
             <objects>
                 <viewController storyboardIdentifier="DetailsPage" id="rBt-ZN-hdu" customClass="DetailViewController" customModule="IOS_TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TJi-71-sve">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pbd-C7-wVh">
-                                <rect key="frame" x="16" y="57" width="55" height="27"/>
+                                <rect key="frame" x="16" y="101" width="55" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWA-se-Kh4">
-                                <rect key="frame" x="16" y="162" width="142" height="27"/>
+                                <rect key="frame" x="16" y="185" width="142" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Has Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acj-Du-A0a">
-                                <rect key="frame" x="16" y="333" width="168" height="27"/>
+                                <rect key="frame" x="16" y="356" width="168" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lOl-XC-zP0">
-                                <rect key="frame" x="16" y="92" width="358" height="34"/>
+                                <rect key="frame" x="16" y="136" width="358" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xRj-Uf-TWu">
-                                <rect key="frame" x="16" y="197" width="358" height="100"/>
+                                <rect key="frame" x="16" y="220" width="358" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="GtU-ub-8bc"/>
                                 </constraints>
@@ -166,19 +166,19 @@
                                 </variation>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-m6-Its">
-                                <rect key="frame" x="327" y="331" width="51" height="31"/>
+                                <rect key="frame" x="327" y="354" width="51" height="31"/>
                             </switch>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="2ol-Ga-Ibw">
-                                <rect key="frame" x="30" y="379" width="330" height="142"/>
+                                <rect key="frame" x="30" y="402" width="330" height="142"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOA-GA-6sf">
-                                <rect key="frame" x="16" y="531" width="64" height="27"/>
+                                <rect key="frame" x="16" y="554" width="64" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPR-S9-TGR">
-                                <rect key="frame" x="326" y="529" width="51" height="31"/>
+                                <rect key="frame" x="326" y="552" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6Q-mT-fpL">
                                 <rect key="frame" x="297" y="700" width="77" height="35"/>
@@ -199,7 +199,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onDelete:" destination="rBt-ZN-hdu" eventType="touchUpInside" id="1bx-0F-EDH"/>
-                                    <segue destination="qmU-7q-Sdb" kind="show" id="NbI-WR-Emg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rn-8l-qsS">
@@ -212,7 +211,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onUpdate:" destination="rBt-ZN-hdu" eventType="touchUpInside" id="VDC-8q-uQL"/>
-                                    <segue destination="qmU-7q-Sdb" kind="show" id="AM0-h7-bWV"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nbv-Rw-O4D">
@@ -465,28 +463,28 @@
             <objects>
                 <viewController id="gMK-Yx-hkQ" customClass="AddDataViewController" customModule="IOS_TODO" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Pq-OZ-suk">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xe5-YX-Y0u">
-                                <rect key="frame" x="16" y="57" width="55" height="27"/>
+                                <rect key="frame" x="16" y="101" width="55" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwl-lw-wKK">
-                                <rect key="frame" x="16" y="141" width="142" height="27"/>
+                                <rect key="frame" x="16" y="185" width="142" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWZ-Ul-C3U">
-                                <rect key="frame" x="16" y="92" width="358" height="34"/>
+                                <rect key="frame" x="16" y="136" width="358" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N2m-JO-wCM">
-                                <rect key="frame" x="16" y="176" width="358" height="100"/>
+                                <rect key="frame" x="16" y="220" width="358" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="xjq-cI-SnI"/>
                                 </constraints>
@@ -494,13 +492,13 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaA-v7-rRd">
-                                <rect key="frame" x="17" y="329" width="165" height="27"/>
+                                <rect key="frame" x="17" y="352" width="165" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-OQ-fqO">
-                                <rect key="frame" x="325" y="327" width="51" height="31"/>
+                                <rect key="frame" x="325" y="350" width="51" height="31"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5N-Ut-rxD">
                                 <rect key="frame" x="296" y="709" width="78" height="35"/>
@@ -512,7 +510,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="onSubmit:" destination="gMK-Yx-hkQ" eventType="touchUpInside" id="E0h-fK-za6"/>
-                                    <segue destination="qmU-7q-Sdb" kind="show" id="yex-Ep-ZJe"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMB-TB-7fz">
@@ -590,19 +587,19 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Has Due Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J8-Dy-HVZ">
-                                <rect key="frame" x="17" y="371" width="168" height="27"/>
+                                <rect key="frame" x="17" y="415" width="168" height="27"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g38-GV-gIa">
-                                <rect key="frame" x="326" y="369" width="51" height="31"/>
+                                <rect key="frame" x="326" y="413" width="51" height="31"/>
                                 <connections>
                                     <action selector="dueDateSwitch:" destination="gMK-Yx-hkQ" eventType="valueChanged" id="WRB-Ee-rH4"/>
                                 </connections>
                             </switch>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="fn9-mu-i9F">
-                                <rect key="frame" x="31" y="417" width="330" height="163"/>
+                                <rect key="frame" x="31" y="461" width="330" height="142"/>
                             </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Lb0-HW-csp"/>
@@ -783,7 +780,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="QmN-9G-poF"/>
-        <segue reference="AM0-h7-bWV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>

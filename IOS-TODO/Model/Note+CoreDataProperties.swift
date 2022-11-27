@@ -22,6 +22,7 @@ extension Note {
     @NSManaged public var notes: String?
     @NSManaged public var hasDueDate: Bool
     @NSManaged public var dueDate: String?
+    @NSManaged public var date: Date?
 
 }
 
