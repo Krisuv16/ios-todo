@@ -37,9 +37,7 @@ class DetailViewController: UIViewController {
         hasDueDateLandscape.isOn = dataList.hasDueDate
         isCompletedLandscape.isOn = dataList.isCompleted
         dueTimeLandscape.date = dataList.date ?? Date.now
-        
-        dueTime.isHidden = !dataList.hasDueDate
-        dueTimeLandscape.isHidden = !dataList.hasDueDate
+
     }
     
     @IBAction func onUpdate(_ sender: UIButton) {
