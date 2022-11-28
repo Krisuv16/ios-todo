@@ -47,6 +47,10 @@ class MainScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let thisNote: Note!
         
+        cells.editBtn.tag = indexPath.row
+        cells.editBtn.addTarget(self, action: #selector(subscribeTapped(_:)), for: .touchUpInside)
+
+        
         //adding custom switch
         let switchView = UISwitch(frame: .zero)
         switchView.tag = indexPath.row // for detect which row switch Changed
@@ -79,13 +83,24 @@ class MainScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         return cells
     }
     
+    @objc func subscribeTapped(_ sender: UIButton){
+//        performSegue(withIdentifier: "detailViewController", sender: nil)
+
+//               let index = dataLists.indexPathForSelectedRow!
+//        let index = sender.tag
+//        let noteDetails = DetailViewController()
+//        let selectedNote: Note!
+//        selectedNote = dataList[index]
+//        noteDetails.dataList = selectedNote
+////        dataLists.deselectRow(at: index, animated: true)
+//        self.performSegue(withIdentifier: "editBtnSegue", sender: self)
+    }
+    
     
     @objc func switchChanged(_ sender : UISwitch!){
         let thisNote: Note!
         thisNote = dataList[sender.tag]
         thisNote.isCompleted = sender.isOn
-        print(thisNote.isCompleted)
-        
         do{
             //saving the updated data
             try self.context.save()
@@ -111,14 +126,13 @@ class MainScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //navigation to another view
         performSegue(withIdentifier: "detailViewController", sender: nil)
         }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //passing data to another view and
+        //passing data to another view
         if(segue.identifier == "detailViewController"){
             let index = dataLists.indexPathForSelectedRow!
             let noteDetails = segue.destination as? DetailViewController
