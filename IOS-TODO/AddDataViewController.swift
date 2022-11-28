@@ -18,6 +18,9 @@ class AddDataViewController: UIViewController {
     
     @IBOutlet weak var uiSwitchLandscape: UISwitch!
     @IBOutlet weak var datePickerLandscape: UIDatePicker!
+    @IBOutlet weak var isCompletedLandscape: UISwitch!
+    @IBOutlet weak var titleLandscape: UITextField!
+    @IBOutlet weak var descriptionLandscape: UITextField!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -53,33 +56,90 @@ class AddDataViewController: UIViewController {
     
     @IBAction func onSubmit(_ sender: UIButton) {
         
-        let formatter3 = DateFormatter()
-        formatter3.dateFormat = "MMM d yyyy, h:mm a "
+        let alert = UIAlertController(title: "Action Required", message: "Do you want to submit the data ?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {action in
             
-        let newNotes = Note(context: self.context)
-        newNotes.id = Int32(truncating: 0 as NSNumber)
-        newNotes.name = titleTextField.text
-        newNotes.notes = descriptionTextField.text
-        newNotes.isCompleted = completedSwitch.isOn
-        newNotes.hasDueDate = uiSwitch.isOn
+        }))
         
-        if(uiSwitch.isOn){
-            newNotes.dueDate = formatter3.string(from: datePicker.date)
-            newNotes.date = datePicker.date
-        }
+        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { action in
+            
+            let formatter3 = DateFormatter()
+            formatter3.dateFormat = "MMM d yyyy, h:mm a "
+                
+            let newNotes = Note(context: self.context)
+            newNotes.id = Int32(truncating: 0 as NSNumber)
+            newNotes.name = self.titleTextField.text
+            newNotes.notes = self.descriptionTextField.text
+            newNotes.isCompleted = self.completedSwitch.isOn
+            newNotes.hasDueDate = self.uiSwitch.isOn
+            
+            if(self.uiSwitch.isOn){
+                newNotes.dueDate = formatter3.string(from: self.datePicker.date)
+                newNotes.date = self.datePicker.date
+            }
+            self.saveData()
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }))
+        present(alert, animated: true)
+    }
+    
+    @IBAction func onSubmitLandScape(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Action Required", message: "Do you want to submit the data ?", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {action in}))
+        
+        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { action in
+            
+            let formatter3 = DateFormatter()
+            formatter3.dateFormat = "MMM d yyyy, h:mm a "
+                
+            let newNotes = Note(context: self.context)
+            newNotes.id = Int32(truncating: 0 as NSNumber)
+            newNotes.name = self.titleLandscape.text
+            newNotes.notes = self.descriptionLandscape.text
+            newNotes.isCompleted = self.isCompletedLandscape.isOn
+            newNotes.hasDueDate = self.uiSwitchLandscape.isOn
+            
+            if(self.uiSwitchLandscape.isOn){
+                newNotes.dueDate = formatter3.string(from: self.datePickerLandscape.date)
+                newNotes.date = self.datePickerLandscape.date
+            }
+            self.saveData()
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }))
+        present(alert, animated: true)
+        
+    }
+    
+    //saving the data in the core data
+    func saveData() {
         do
         {
             try self.context.save()
-            let _ =    try self.context.fetch(Note.fetchRequest())
+            let _ = try self.context.fetch(Note.fetchRequest())
         }
         catch {
             print("Error")
         }
-        _ = navigationController?.popToRootViewController(animated: true)
-
-        
     }
     
+    //clearing fields in Potrailt
+    @IBAction func onClear(_ sender: UIButton) {
+        titleTextField.text = ""
+        descriptionTextField.text = ""
+        uiSwitch.isOn = false
+        completedSwitch.isOn = false
+        datePicker.isHidden = true
+    }
+    
+    //clearing fields in LandScape
+    @IBAction func onClearLandscape(_ sender: UIButton) {
+        titleLandscape.text = ""
+        descriptionLandscape.text = ""
+        uiSwitchLandscape.isOn = false
+        isCompletedLandscape.isOn = false
+        datePickerLandscape.isHidden = true
+    }
     
 }
