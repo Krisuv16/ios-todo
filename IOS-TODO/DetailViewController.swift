@@ -37,15 +37,20 @@ class DetailViewController: UIViewController {
         hasDueDateLandscape.isOn = dataList.hasDueDate
         isCompletedLandscape.isOn = dataList.isCompleted
         dueTimeLandscape.date = dataList.date ?? Date.now
+        
+        dueTime.isHidden = !dataList.hasDueDate
+        dueTimeLandscape.isHidden = !dataList.hasDueDate
     }
     
     @IBAction func onUpdate(_ sender: UIButton) {
+        //using alert Dialog
         let alert = UIAlertController(title: "Action Required", message: "Do you want to Update the data ?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {action in}))
         
         alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: {action in
             
+            //formating date
             let formatter3 = DateFormatter()
             formatter3.dateFormat = "MMM d yyyy, h:mm a "
             
@@ -66,17 +71,20 @@ class DetailViewController: UIViewController {
             self.updateData()
         }))
         
+        //presenting dialog
         present(alert, animated: true)
     }
     
     
     @IBAction func onUpdateLandScape(_ sender: UIButton) {
+        //using alert Dialog
+
         let alert = UIAlertController(title: "Action Required", message: "Do you want to Update the data ?", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: {action in}))
         
         alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: {action in
-            
+            //formating date
             let formatter3 = DateFormatter()
             formatter3.dateFormat = "MMM d yyyy, h:mm a "
             
@@ -96,6 +104,8 @@ class DetailViewController: UIViewController {
             self.updateData()
             
         }))
+        //presenting dialog
+
         present(alert, animated: true)
         
     }
@@ -123,6 +133,7 @@ class DetailViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    //function for Deleting data
     func deleteData(){
         self.context.delete(dataList)
         do{
@@ -134,6 +145,7 @@ class DetailViewController: UIViewController {
         }
     }
     
+    //function for Updating data
     func updateData(){
         do{
             try self.context.save()
@@ -142,9 +154,25 @@ class DetailViewController: UIViewController {
         }catch{}
     }
     
-    @IBAction func cancelLandScape(_ sender: UIButton) {
-    }
     
+    //cancel for LandScape Mode
+    @IBAction func cancelLandScape(_ sender: UIButton) {
+        cancelAction()
+    }
+    //cancel for potrait mod
     @IBAction func cancel(_ sender: UIButton) {
+        cancelAction()
+    }
+
+    //FUnction Handling Cancel buttons
+    func cancelAction(){
+        let alert = UIAlertController(title: "Action Required", message: "Do you want to Discard Changes?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {action in}))
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {action in
+            _ = self.navigationController?.popToRootViewController(animated: true)
+        }))
+        present(alert, animated: true)
     }
 }
