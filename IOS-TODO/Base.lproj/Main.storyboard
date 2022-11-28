@@ -43,9 +43,6 @@
                                                     </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system"/>
-                                                    <connections>
-                                                        <segue destination="rBt-ZN-hdu" kind="show" identifier="EditIdentifier" id="QmN-9G-poF"/>
-                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="June 20,2022" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCO-Kn-tMK">
                                                     <rect key="frame" x="20" y="128" width="185" height="21"/>
@@ -778,9 +775,6 @@
             <point key="canvasLocation" x="483.07692307692304" y="-360.42654028436016"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="QmN-9G-poF"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="square.and.pencil" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">

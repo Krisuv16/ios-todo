@@ -25,10 +25,4 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    
-    @IBAction func itemSwitch(_ sender: UISwitch) {
-        print(sender.isOn)
-    }
-    
 }
