@@ -1,9 +1,10 @@
-//
-//  AddDataViewController.swift
-//  IOS-TODO
-//
-//  Created by Krisuv Bohara on 2022-11-13.
-//
+/*
+ File Name: MainViewController
+ Author: Krisuv Bohara(301274636), Niraj Nepal(301211100)
+ Date: 2022-11-13
+ Description: Creates the main UI of the Todo app
+ Version: 1.0
+ */
 
 import UIKit
 import CoreData
@@ -68,7 +69,6 @@ class AddDataViewController: UIViewController {
             formatter3.dateFormat = "MMM d yyyy, h:mm a "
                 
             let newNotes = Note(context: self.context)
-            newNotes.id = Int32(truncating: 0 as NSNumber)
             newNotes.name = self.titleTextField.text
             newNotes.notes = self.descriptionTextField.text
             newNotes.isCompleted = self.completedSwitch.isOn
@@ -95,7 +95,6 @@ class AddDataViewController: UIViewController {
             formatter3.dateFormat = "MMM d yyyy, h:mm a "
                 
             let newNotes = Note(context: self.context)
-            newNotes.id = Int32(truncating: 0 as NSNumber)
             newNotes.name = self.titleLandscape.text
             newNotes.notes = self.descriptionLandscape.text
             newNotes.isCompleted = self.isCompletedLandscape.isOn
@@ -117,7 +116,7 @@ class AddDataViewController: UIViewController {
         do
         {
             try self.context.save()
-            let _ = try self.context.fetch(Note.fetchRequest())
+//            let _ = try self.context.fetch(Note.fetchRequest())
         }
         catch {
             print("Error")
