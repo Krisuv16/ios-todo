@@ -46,9 +46,10 @@ class MainScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-//
+//function that adds swipe action on the leading side left side
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
 
+        //for edit
         let editAction = UIContextualAction(style: .destructive, title: "Edit") {
             (action, sourceView, completionHandler) in
             let thisNote: Note!
@@ -56,7 +57,7 @@ class MainScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             self.performSegue(withIdentifier: "detailViewController", sender: thisNote)
         }
         
-        
+        //for done actions
         let doneAction = UIContextualAction(style: .normal, title: "Done") { (action, view, bool) in
             let thisNote: Note!
             thisNote = self.dataList[indexPath.row]
@@ -140,10 +141,14 @@ class MainScreenViewController: UIViewController, UITableViewDelegate, UITableVi
 //        cells.accessoryView = switchView
         
         //setting up value
+        
+        
         thisNote = dataList[indexPath.row]
         cells.titleLabel.text = thisNote.name
         cells.descLabel.text = thisNote.notes
         cells.dateLabel.text = "Due: " + (thisNote.dueDate ?? "No Due Date")
+        
+        
 //        switchView.setOn(thisNote.isCompleted, animated: true)
         //for adding strikethrough if its completed
         
